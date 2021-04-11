@@ -1,86 +1,96 @@
-const fs = require('fs');
+const Route = require('../models/routeModel');
+// const { route } = require('../routes/routeRoutes');
 
-const routes = JSON.parse(
-  fs.readFileSync(`${__dirname}/../dev-data/data/routes-simple.json`)
-);
+// const routes = JSON.parse(
+//   fs.readFileSync(`${__dirname}/../dev-data/data/routes-simple.json`)
+// );
 
-exports.checkID = (req, res, next, val) => {
-  console.log(req.params);
-  if (req.params.id * 1 > routes.length) {
-    return res.status(404).json({
+exports.getAllRoutes = async (req, res) => {
+  try {
+    const routes = await Route.find();
+
+    res.status(200).json({
+      status: 'success',
+      results: routes.length,
+      data: {
+        routes
+      }
+    });
+  } catch (err) {
+    res.status(404).json({
       status: 'fail',
-      message: 'Invalid ID'
+      message: err
     });
   }
-  next();
 };
 
-exports.checkBody = (req, res, next) => {
-  if (!req.body.name || !req.body.svg) {
-    return res.status(400).json({
+exports.getRoute = async (req, res) => {
+  try {
+    const route = await Route.findById(req.params.id);
+
+    res.status(200).json({
+      status: 'success',
+      data: {
+        route
+      }
+    });
+  } catch (err) {
+    res.status(404).json({
       status: 'fail',
-      message: 'Missing name or svg'
+      message: err
     });
   }
-  next();
 };
 
-
-
-exports.getAllRoutes = (req, res) => {
-  res.status(200).json({
-    status: 'success',
-    results: routes.length,
-    data: {
-      routes
-    }
-  });
+exports.createRoute = async (req, res) => {
+  try {
+    const newRoute = await Route.create(req.body);
+    res.status(201).json({
+      status: 'success',
+      data: {
+        route: newRoute
+      }
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: 'Invalid data sent'
+    });
+  }
 };
 
-exports.getRoute = (req, res) => {
-
-  const id = req.params.id * 1;
-  const route = routes.find(el => el.id === id);
-  res.status(200).json({
-    status: 'success',
-    data: {
-      route
-    }
-  });
-}
-
-exports.createRoute = (req, res) => {
-  const newId = routes[routes.length - 1].id + 1;
-  const newRoute = Object.assign({ id: newId }, req.body);
-
-  routes.push(newRoute);
-  fs.writeFile(
-    `${__dirname}/dev-data/data/routes-simple.json`,
-    JSON.stringify(routes),
-    err => {
-      res.status(201).json({
-        status: 'success',
-        data: {
-          route: newRoute
-        }
-      });
-    }
-  );
+exports.updateRoute = async (req, res) => {
+  try {
+    const route = await Route.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true
+    });
+    res.status(200).json({
+      status: 'success',
+      data: {
+        route
+      }
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'fail',
+      message: 'Invalid data sent'
+    });
+  }
 };
 
+exports.deleteRoute = async (req, res) => {
+  try {
+    await Route.findByIdAndDelete(req.params.id);
 
-exports.updateRoute = (req, res) => {
-  res.status(200).json({
-    status: 'success',
-    data: {
-      route: '<updated route here..>'
-    }
-  })
+    res.status(204).json({
+      status: 'success',
+      data: null
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'fail',
+      message: err
+    });
+  }
 };
-
-exports.deleteRoute = (req, res) => {
-  res.status(204).json({
-    status: 'success',
-    data: null
-  });
-}

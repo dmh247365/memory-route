@@ -1,14 +1,14 @@
 const express = require('express');
-const routeController = require('./../controllers/routeController');
+const routeController = require('../controllers/routeController');
+
 const router = express.Router();
 
-router.param('id', routeController.checkID);
+// router.param('id', routeController.checkID);
 
 router
   .route('/')
   .get(routeController.getAllRoutes)
-  .post(routeController.checkBody, routeController.createRoute);
-
+  .post(routeController.createRoute);
 
 router
   .route('/:id')
