@@ -1,14 +1,17 @@
 const Route = require('../models/routeModel');
-// const { route } = require('../routes/routeRoutes');
-
-// const routes = JSON.parse(
-//   fs.readFileSync(`${__dirname}/../dev-data/data/routes-simple.json`)
-// );
+const APIFeatures = require('../utils/apiFeatures');
 
 exports.getAllRoutes = async (req, res) => {
   try {
-    const routes = await Route.find();
+    // EXECUTE QUERY
+    const features = new APIFeatures(Route.find(), req.query)
+      .filter()
+      .sort()
+      .limitFields()
+      .pagination();
+    const routes = await features.query;
 
+    // SEND RESPONSE
     res.status(200).json({
       status: 'success',
       results: routes.length,
