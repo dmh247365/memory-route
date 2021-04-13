@@ -1,99 +1,77 @@
 const Route = require('../models/routeModel');
 const APIFeatures = require('../utils/apiFeatures');
+const AppError = require('../utils/appError');
+const catchAsync = require('../utils/catchAsync');
 
-exports.getAllRoutes = async (req, res) => {
-  try {
-    // EXECUTE QUERY
-    const features = new APIFeatures(Route.find(), req.query)
-      .filter()
-      .sort()
-      .limitFields()
-      .pagination();
-    const routes = await features.query;
+exports.getAllRoutes = catchAsync(async (req, res, next) => {
+  const features = new APIFeatures(Route.find(), req.query)
+    .filter()
+    .sort()
+    .limitFields()
+    .pagination();
+  const routes = await features.query;
 
-    // SEND RESPONSE
-    res.status(200).json({
-      status: 'success',
-      results: routes.length,
-      data: {
-        routes
-      }
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: err
-    });
+  res.status(200).json({
+    status: 'success',
+    results: routes.length,
+    data: {
+      routes
+    }
+  });
+});
+
+exports.getRoute = catchAsync(async (req, res, next) => {
+  const route = await Route.findById(req.params.id);
+
+  if (!route) {
+    return next(new AppError(404, 'No route found with that ID'));
   }
-};
 
-exports.getRoute = async (req, res) => {
-  try {
-    const route = await Route.findById(req.params.id);
+  res.status(200).json({
+    status: 'success',
+    data: {
+      route
+    }
+  });
+});
 
-    res.status(200).json({
-      status: 'success',
-      data: {
-        route
-      }
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: err
-    });
+exports.createRoute = catchAsync(async (req, res, next) => {
+  const newRoute = await Route.create(req.body);
+  res.status(201).json({
+    status: 'success',
+    data: {
+      route: newRoute
+    }
+  });
+});
+
+exports.updateRoute = catchAsync(async (req, res, next) => {
+  const route = await Route.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true
+  });
+
+  if (!route) {
+    return next(new AppError(404, 'No route found with that ID'));
   }
-};
 
-exports.createRoute = async (req, res) => {
-  try {
-    const newRoute = await Route.create(req.body);
-    res.status(201).json({
-      status: 'success',
-      data: {
-        route: newRoute
-      }
-    });
-  } catch (err) {
-    res.status(400).json({
-      status: 'fail',
-      message: 'Invalid data sent'
-    });
+  res.status(200).json({
+    status: 'success',
+    data: {
+      route
+    }
+  });
+});
+
+exports.deleteRoute = catchAsync(async (req, res, next) => {
+  const route = await Route.findByIdAndDelete(req.params.id);
+
+  if (!route) {
+    return next(new AppError(404, 'No route found with that ID'));
   }
-};
 
-exports.updateRoute = async (req, res) => {
-  try {
-    const route = await Route.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true
-    });
-    res.status(200).json({
-      status: 'success',
-      data: {
-        route
-      }
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: 'Invalid data sent'
-    });
-  }
-};
-
-exports.deleteRoute = async (req, res) => {
-  try {
-    await Route.findByIdAndDelete(req.params.id);
-
-    res.status(204).json({
-      status: 'success',
-      data: null
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: err
-    });
-  }
-};
+  res.status(204).json({
+    status: 'success',
+    data: null
+  });
+});
