@@ -43,6 +43,9 @@ exports.createRoute = catchAsync(async (req, res, next) => {
       route: newRoute
     }
   });
+  if (!newRoute) {
+    return next(new AppError(404, 'No route found with that ID'));
+  }
 });
 
 exports.updateRoute = catchAsync(async (req, res, next) => {

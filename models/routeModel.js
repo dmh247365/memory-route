@@ -6,8 +6,8 @@ const routeSchema = new mongoose.Schema({
     required: [true, 'A route must have a name'],
     unique: true,
     trim: true,
-    maxlength: [25, 'A routeName must be 25 characters or less'],
-    minlength: [3, 'image string must be 3 charcters or more']
+    maxlength: [25, 'A route name must be 25 characters or less'],
+    minlength: [3, 'A route name must be 3 charcters or more']
   },
   number: {
     type: Number,
@@ -18,8 +18,8 @@ const routeSchema = new mongoose.Schema({
     type: String,
     required: [true, 'A route must have something to learn'],
     trim: true,
-    maxlength: [500, 'to learn must be 500 characters or less'],
-    minlength: [5, 'image string must be 5 charcters or more']
+    maxlength: [500, 'Learn information must be 500 characters or less'],
+    minlength: [5, 'Learn information must be 5 charcters or more']
   },
   imageCover: {
     type: String,
