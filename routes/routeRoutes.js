@@ -1,5 +1,6 @@
 const express = require('express');
 const routeController = require('../controllers/routeController');
+const authController = require('../controllers/authController');
 
 const router = express.Router();
 
@@ -7,7 +8,7 @@ const router = express.Router();
 
 router
   .route('/')
-  .get(routeController.getAllRoutes)
+  .get(authController.protect, routeController.getAllRoutes)
   .post(routeController.createRoute);
 
 router

@@ -1,9 +1,14 @@
+const { promisify } = require('util');
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 
-const signToken = function (id, jwtSecret, jwtExpires) {};
+const signToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRES_IN
+  });
+};
 
 exports.signup = catchAsync(async (req, res, next) => {
   const newUser = await User.create({
@@ -13,9 +18,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     passwordConfirm: req.body.passwordConfirm
   });
 
-  const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN
-  });
+  const token = signToken(newUser._id);
 
   res.status(201).json({
     status: 'success',
@@ -43,9 +46,44 @@ exports.login = catchAsync(async (req, res, next) => {
   console.log(user);
 
   // 3) if everything is ok, send the json web token to the client
-  const token = '';
+  const token = signToken(user._id);
+
   res.status(200).json({
     status: 'success',
     token
   });
+});
+
+exports.protect = catchAsync(async (req, res, next) => {
+  // 1) getting token and check of its there
+  let token;
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith('Bearer')
+  ) {
+    token = req.headers.authorization.split(' ')[1];
+  }
+
+  console.log('im the token', token);
+
+  if (!token) {
+    return next(
+      new AppError(401, 'You are not logged in! Please log in to get access!')
+    );
+  }
+
+  // 2) verification of token
+  const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+
+  // 3) Check if user still exists
+  const freshUser = await User.findById(decoded.id);
+  if (!freshUser) {
+    return next(
+      new AppError(401, 'The user belonging to this token no longer exists!')
+    );
+  }
+
+  // 4) Check if user changed password after the JWT was issued
+
+  next();
 });
