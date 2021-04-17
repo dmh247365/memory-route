@@ -15,6 +15,10 @@ router
   .route('/:id')
   .get(routeController.getRoute)
   .patch(routeController.updateRoute)
-  .delete(routeController.deleteRoute);
+  .delete(
+    authController.protect,
+    authController.restrictTo('admin', 'dev'),
+    routeController.deleteRoute
+  );
 
 module.exports = router;
