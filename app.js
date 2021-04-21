@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const logger = require('morgan');
 const rateLimit = require('express-rate-limit');
@@ -12,6 +13,9 @@ const routeRouter = require('./routes/routeRoutes');
 const userRouter = require('./routes/userRoutes');
 
 const app = express();
+
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
 
 // Global middleware
 // Set security HTTP headers
@@ -43,10 +47,21 @@ app.use(xss());
 // Prevent parameter pollution (no whitelist at the moment)
 app.use(hpp());
 
+// Serving static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Test middleware
 app.use((req, res, next) => {
   //console.log('Im the request header ', req.headers);
   next();
+});
+
+// Routes
+app.get('/', (req, res) => {
+  res.status(200).render('base', {
+    route: 'The Forest Hiker',
+    user: 'davo'
+  });
 });
 
 app.use('/api/v1/routes', routeRouter);
