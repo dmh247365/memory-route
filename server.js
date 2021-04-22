@@ -23,7 +23,7 @@ mongoose
     useFindAndModify: false
   })
   .then(() => {
-    console.log('DB connection successful!');
+    console.log('Database connection: SUCCESSFUL...');
   });
 
 // console.log(app.get('env'));
