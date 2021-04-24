@@ -39,3 +39,5 @@ This is an instance of express, ie a server. we define our routes
 ## MODELS (folder)
 
 ## VIEWS (folder)
+
+## css --> sass need to installer compiler etc
