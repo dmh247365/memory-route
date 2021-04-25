@@ -41,3 +41,5 @@ This is an instance of express, ie a server. we define our routes
 ## VIEWS (folder)
 
 ## css --> sass need to installer compiler etc
+
+## do designs per figma file
