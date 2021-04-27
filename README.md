@@ -43,3 +43,7 @@ This is an instance of express, ie a server. we define our routes
 ## css --> sass need to installer compiler etc
 
 ## do designs per figma file & add in styling
+
+designed the login page
+designed the sign up page
+designed the call to action page
