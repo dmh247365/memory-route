@@ -18,6 +18,9 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 // Global middleware
+// Serving static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Set security HTTP headers
 app.use(helmet());
 
@@ -46,9 +49,6 @@ app.use(xss());
 
 // Prevent parameter pollution (no whitelist at the moment)
 app.use(hpp());
-
-// Serving static files
-app.use(express.static(path.join(__dirname, 'public')));
 
 // Test middleware
 app.use((req, res, next) => {
