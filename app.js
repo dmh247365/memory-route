@@ -64,6 +64,18 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/overview', (req, res) => {
+  res.status(200).render('overview', {
+    title: 'All Routes'
+  });
+});
+
+app.get('/route', (req, res) => {
+  res.status(200).render('route', {
+    title: 'Blarrrrg'
+  });
+});
+
 app.use('/api/v1/routes', routeRouter);
 app.use('/api/v1/users', userRouter);
 
