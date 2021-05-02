@@ -11,6 +11,7 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const routeRouter = require('./routes/routeRoutes');
 const userRouter = require('./routes/userRoutes');
+const viewRouter = require('./routes/viewRoutes');
 
 const app = express();
 
@@ -57,25 +58,7 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.get('/', (req, res) => {
-  res.status(200).render('base', {
-    route: 'The Forest Hiker',
-    user: 'davo'
-  });
-});
-
-app.get('/overview', (req, res) => {
-  res.status(200).render('overview', {
-    title: 'All Routes'
-  });
-});
-
-app.get('/route', (req, res) => {
-  res.status(200).render('route', {
-    title: 'Blarrrrg'
-  });
-});
-
+app.use('/', viewRouter);
 app.use('/api/v1/routes', routeRouter);
 app.use('/api/v1/users', userRouter);
 
