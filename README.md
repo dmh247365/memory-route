@@ -1,4 +1,12 @@
 <!-- prettier-ignore -->
+### Default database information
+
+1. - clear the database (in cmd line do)
+     $node dev-data/data/import-dev-data.js --delete
+
+2. - populate the database with seed data (in cmd line do)
+     $ node dev-data/data/import-dev-data.js --import
+
 ### Memory-route
 
 setting up mongodb

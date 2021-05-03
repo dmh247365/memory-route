@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
 const routeSchema = new mongoose.Schema({
-  name: {
+  title: {
     type: String,
-    required: [true, 'A route must have a name'],
+    required: [true, 'A route must have a title'],
     unique: true,
     trim: true,
     maxlength: [25, 'A route name must be 25 characters or less'],
-    minlength: [3, 'A route name must be 3 charcters or more']
+    minlength: [3, 'A route name must be 3 characters or more']
   },
   number: {
     type: Number,
@@ -19,17 +19,25 @@ const routeSchema = new mongoose.Schema({
     required: [true, 'A route must have something to learn'],
     trim: true,
     maxlength: [500, 'Learn information must be 500 characters or less'],
-    minlength: [5, 'Learn information must be 5 charcters or more']
+    minlength: [5, 'Learn information must be 5 characters or more']
   },
-  imageCover: {
+  image: {
     type: String,
     required: [true, 'A route must have an image'],
     maxlength: [30, 'image string must be 30 charcters or less'],
-    minlength: [8, 'image string must be 8 charcters or more']
+    minlength: [8, 'image string must be 8 characters or more']
   },
-  elements: {
-    type: Number,
-    required: [true, 'A route must a number of elements to learn']
+  elements: [
+    {
+      prompt: String,
+      order: Number
+    }
+  ],
+  details: {
+    type: String,
+    required: [true, 'A route must have details'],
+    maxlength: [500, 'image string must be 500 characters or less'],
+    minlength: [8, 'image string must be 8 charcters or more']
   }
 });
 
