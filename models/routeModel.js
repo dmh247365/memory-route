@@ -1,4 +1,6 @@
+const { NetworkAuthenticationRequire } = require('http-errors');
 const mongoose = require('mongoose');
+const slugify = require('slugify');
 
 const routeSchema = new mongoose.Schema({
   title: {
@@ -9,6 +11,7 @@ const routeSchema = new mongoose.Schema({
     maxlength: [25, 'A route name must be 25 characters or less'],
     minlength: [3, 'A route name must be 3 characters or more']
   },
+  slug: String,
   number: {
     type: Number,
     required: [true, 'A route must have a number'],
@@ -39,6 +42,12 @@ const routeSchema = new mongoose.Schema({
     maxlength: [500, 'image string must be 500 characters or less'],
     minlength: [8, 'image string must be 8 charcters or more']
   }
+});
+
+// DOCUMENT MIDDLEWARE: runs before .save() and .create()
+routeSchema.pre('save', function (next) {
+  this.slug = slugify(this.title, { lower: true });
+  next();
 });
 
 const Route = mongoose.model('Route', routeSchema);

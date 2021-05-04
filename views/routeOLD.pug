@@ -1,0 +1,26 @@
+extends base
+
+block content
+  section.section-header
+    .header__hero
+      .header__hero-overlay &nbsp;
+      img.header__hero-img(src=`/img/routes/${route.image}`, alt=`${route.title}`)
+    
+    .heading-box
+      h1.heading-primary
+        span=route.title
+
+  section.section-description
+    .overview-box
+      div
+        .overview-box__group
+          h2.heading-secondary.ma-bt-lg Elements 
+          each element in route.elements
+            .overview-box__details
+              span=element.prompt
+    .description_box
+      h2.heading-secondary.ma-bt-lg Details
+        p=route.details
+              
+
+

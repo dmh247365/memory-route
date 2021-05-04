@@ -9,19 +9,17 @@ block content
           .card__header
             .card__picture
               .card__picture-overlay &nbsp;
-              img.card__picture-img(src=`img/routes/${route.image}`, alt=`${route.name}`)
+              img.card__picture-img(src=`/img/routes/${route.image}`, alt=`${route.name}`)
             h3.heading-tertirary
               span= route.title
 
           .card__details
             h4.card__sub-heading= route.learn
-            p.card__text= 'the roundabout'
-            .card__data
-              svg.card__icon
-              span= `test`
 
           .card__footer
             p
-              span.card__footer-value= route.elements.length
+              span=`${route.number}`
               | 
-              span.card__footer-text elements
+              a.btn.btn--green.btn_small(href=`/route/${route.slug}`) Details
+              |
+              span=`${route.elements.length}`

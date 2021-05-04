@@ -13,8 +13,10 @@ exports.getOverview = catchAsync(async (req, res) => {
     routes
   });
 });
-exports.getRoute = (req, res) => {
+exports.getRoute = catchAsync(async (req, res) => {
+  const route = await Route.findOne({ slug: req.params.slug });
   res.status(200).render('route', {
-    title: 'Blarrrrg'
+    title: 'Blarrrrg',
+    route
   });
-};
+});

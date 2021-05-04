@@ -42,65 +42,75 @@
   {
     "title": "Fishing Path",
     "number": 2,
-    "learn": "Fat models thin controllers",
+    "learn": "What is a Primitives",
     "image": "fishing_path-2.jpg",
     "elements": [
       {
         "_id": "5c88fa8cf4adda39709c2201",
-        "prompt": "2round1",
+        "prompt": "data type",
         "order": 1
       },
       {
         "_id": "5c88fa8cf4adda39709c2202",
-        "prompt": "2round2",
+        "prompt": "cannot",
         "order": 2
       },
       {
         "_id": "5c88fa8cf4adda39709c2203",
-        "prompt": "2round3",
+        "prompt": "broken",
         "order": 3
       },
       {
         "_id": "5c88fa8cf4adda39709c2204",
-        "prompt": "2round4",
+        "prompt": "down",
         "order": 4
       }
     ],
-    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet purus gravida quis blandit turpis cursus in hac. Vel elit scelerisque mauris pellentesque. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim."
+    "details": "Primitives (lowest form) cannot be broken down further, anf thus contain no other data types."
   },
   {
     "title": "Nursery Gate",
     "number": 3,
-    "learn": "Fat models thin controllers",
+    "learn": "How many Primitives",
     "image": "nursery_gate-3.jpg",
     "elements": [
       {
         "_id": "5c88fa8cf4adda39709c2301",
-        "prompt": "3round1",
+        "prompt": "6 Bunnss",
         "order": 1
       },
       {
         "_id": "5c88fa8cf4adda39709c2302",
-        "prompt": "3round2",
+        "prompt": "Undefined",
         "order": 2
       },
       {
         "_id": "5c88fa8cf4adda39709c2303",
-        "prompt": "3round3",
+        "prompt": "Null",
         "order": 3
       },
       {
         "_id": "5c88fa8cf4adda39709c2304",
-        "prompt": "3round4",
+        "prompt": "Boolean",
         "order": 4
       },
       {
         "_id": "5c88fa8cf4adda39709c2305",
-        "prompt": "3round5",
+        "prompt": "Number",
         "order": 5
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2306",
+        "prompt": "String",
+        "order": 6
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2307",
+        "prompt": "Symbol",
+        "order": 7
       }
     ],
-    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet purus gravida quis blandit turpis cursus in hac. Vel elit scelerisque mauris pellentesque. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim."
+    "details": "The six types of primitives are..."
   },
   {
     "title": "Garden Shed",
