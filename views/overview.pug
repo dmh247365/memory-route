@@ -17,9 +17,6 @@ block content
             h4.card__sub-heading= route.learn
 
           .card__footer
-            p
-              span=`${route.number}`
-              | 
-              a.btn.btn--green.btn_small(href=`/route/${route.slug}`) Details
-              |
-              span=`${route.elements.length}`
+            span.card__footer-location=`No. ${route.number}`
+            span.card__footer-elements=`${route.elements.length} : Elements`
+            a.btn.btn--green.btn_small-footer(href=`/route/${route.slug}`) Details

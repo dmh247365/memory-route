@@ -16,7 +16,6 @@ exports.getOverview = catchAsync(async (req, res) => {
 exports.getRoute = catchAsync(async (req, res, next) => {
   const route = await Route.findOne({ slug: req.params.slug });
   res.status(200).render('route', {
-    title: 'Blarrrrg',
     route
   });
 });

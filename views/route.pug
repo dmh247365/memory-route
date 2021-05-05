@@ -1,9 +1,15 @@
 extends base
 
 block content
-  section.dcard-location-container test
-    .item
-      .item--1
-      .item--2
-      .item--3
+  section.dcard-location-container
+    .item--1
+      .dcard-picture
+        img.card__picture-img(src=`/img/routes/${route.image}`, alt=`${route.name}`)
+    .item--2
+      each element in route.elements
+        h4.element__prompt=`${element.order} : ${element.prompt}`
+    .item--3
+      - const paragraphs = route.details.split('\n');
+      each p in paragraphs
+        p.description__text= p
 
