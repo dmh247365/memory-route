@@ -2,13 +2,15 @@ extends base
 
 block content
   section.dcard-location-container
-    .item--1
+    .route_box-image
       .dcard-picture
         img.card__picture-img(src=`/img/routes/${route.image}`, alt=`${route.name}`)
-    .item--2
+    .route_box-elements
       each element in route.elements
         h4.element__prompt=`${element.order} : ${element.prompt}`
-    .item--3
+    .route_box-svg
+      img.svgIcon#seesaw(src=`/img/svg/seesaw3.svg`, alt='hello')
+    .route_box-details
       - const paragraphs = route.details.split('\n');
       each p in paragraphs
         p.description__text= p
