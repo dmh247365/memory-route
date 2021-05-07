@@ -9,7 +9,10 @@ block content
       each element in route.elements
         h4.element__prompt=`${element.order} : ${element.prompt}`
     .route_box-svg
-      img.svgIcon#seesaw(src=`/img/svg/seesaw3.svg`, alt='hello')
+      div
+        //- +svg-icon.orange.medium(svg-icon-name='shield')
+        +svg-icon.medium(svg-icon-name='seesaw-1')
+      //- img.svgIcon(src=`/img/svg/seesaw100.svg`, alt='hello')
     .route_box-details
       - const paragraphs = route.details.split('\n');
       each p in paragraphs
