@@ -10,9 +10,12 @@ block content
         h4.element__prompt=`${element.order} : ${element.prompt}`
     .route_box-svg
       div
-        //- +svg-icon.orange.medium(svg-icon-name='shield')
         +svg-icon.medium(svg-icon-name='seesaw-1')
-      //- img.svgIcon(src=`/img/svg/seesaw100.svg`, alt='hello')
+        div.svg__radio__group
+          input(type='radio', name='one', value='1', id='btn1')
+          label(for='one') BTN1
+          input(type='radio', name='one', value='2')#btn100
+          label(for='two') BTN2
     .route_box-details
       - const paragraphs = route.details.split('\n');
       each p in paragraphs

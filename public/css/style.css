@@ -84,7 +84,7 @@ body {
 }
 
 .route_box-svg {
-  background-color: yellowgreen;
+  background-color: lightgray;
   grid-column: 3 / 4;
   grid-row: 1 / 2;
   /* position: relative; */
@@ -131,6 +131,34 @@ body {
   fill: yellow;
 }
 
+.medium > circle {
+  fill: none;
+}
+
+/* .medium path {
+  fill: black;
+} */
+
+.medium path:not(:first-of-type) {
+  fill: black;
+}
+
+#base {
+  fill: pink;
+}
+
+/* buttons */
+input#btn1:checked {
+  fill: green;
+}
+
+#btn101 {
+  background-color: #20bf6b;
+}
+
+.medium .circle2 {
+  fill: blue;
+}
 /* end of dave code */
 
 .span-all-rows {
