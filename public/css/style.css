@@ -147,6 +147,10 @@ body {
   fill: pink;
 }
 
+#circle1 {
+  fill: pink;
+}
+
 /* buttons */
 input#btn1:checked {
   fill: green;
