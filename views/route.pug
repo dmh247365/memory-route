@@ -10,11 +10,9 @@ block content
         h4.element__prompt=`${element.order} : ${element.prompt}`
     .route_box-svg
       div
-        +svg-icon.medium(svg-icon-name='seesaw-1')
-        div.svg__radio__group
-          input(type='radio', name='one', value='1', id='btn1')
-          label(for='one') BTN1
-          
+        +svg-icon.medium(svg-icon-name=`icon-${route.elements.length}`)
+       
+        
     .route_box-details
       - const paragraphs = route.details.split('\n');
       each p in paragraphs
