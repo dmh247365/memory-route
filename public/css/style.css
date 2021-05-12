@@ -143,6 +143,21 @@ body {
   fill: green;
 }
 
+#circle_2_Inner {
+  fill: #accbff;
+}
+
+#circle_2_Inner:hover {
+  fill: green;
+}
+
+#circle_3_Inner {
+  fill: #accbff;
+}
+
+#circle_3_Inner:hover {
+  fill: green;
+}
 /* .medium path {
   fill: black;
 } */
