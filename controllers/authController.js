@@ -70,14 +70,6 @@ exports.login = catchAsync(async (req, res, next) => {
   createSendToken(user, 200, res);
 });
 
-exports.logout = (req, res) => {
-  res.cookie('jwt', 'loggedout', {
-    expires: new Date(Date.now() + 10 * 1000),
-    httpOnly: true
-  });
-  res.status(200).json({ status: 'success' });
-};
-
 exports.protect = catchAsync(async (req, res, next) => {
   // 1) getting token and check of its there
   let token;
@@ -120,7 +112,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 });
 
 // only for rendered pages, no errors
-exports.isLoggedIn = catchAsync(async (req, res, next) => {
+exports.isLoggedIn = async (req, res, next) => {
   if (req.cookies.jwt) {
     try {
       // 1) verify the token
@@ -148,7 +140,7 @@ exports.isLoggedIn = catchAsync(async (req, res, next) => {
     }
   }
   next();
-});
+};
 
 exports.restrictTo = (...roles) => {
   return (req, res, next) => {
@@ -183,7 +175,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
   )}/api/v1/users/resetPassword/${resetToken}`;
 
   const message = `Forgot your password? Submit a PATCH request with your new password and
-  passwordConfirm to: ${resetURL}.\nIf you didn't forget your password, please ignore this email!`;
+                passwordConfirm to: ${resetURL}.\nIf you didn't forget your password, please ignore this email!`;
 
   try {
     await sendEmail({
@@ -234,6 +226,14 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
   // 4) log the user in, send the jwt to the client
   createSendToken(user, 200, res);
 });
+
+exports.logout = (req, res) => {
+  res.cookie('jwt', 'loggedout', {
+    expires: new Date(Date.now() + 10 * 1000),
+    httpOnly: true
+  });
+  res.status(200).json({ status: 'success' });
+};
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
   // 1 - get the user from the collection

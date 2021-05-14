@@ -28,8 +28,7 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'", 'https:', 'data', 'ws:'],
-      baseUri: ["'self"],
-      fontSrc: ["'self", 'https:', 'data:'],
+      fontSrc: ['https:', 'data:'],
       scriptSrc: ["'self'", 'https:', 'blob:'],
       styleSrc: ["'self'", 'https:', 'unsafe-inline']
     }
@@ -66,7 +65,6 @@ app.use(hpp());
 // Test middleware
 app.use((req, res, next) => {
   //console.log('Im the request header ', req.headers);
-  console.log(req.cookies);
   next();
 });
 
