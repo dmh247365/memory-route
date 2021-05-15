@@ -12,7 +12,10 @@ html
 
   body
     // HEADER
-    include _header
+    if user
+      include _header
+    else
+      include _welcomeHeader 
 
     // CONTENT
     block content
