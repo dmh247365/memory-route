@@ -113,6 +113,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 
 // only for rendered pages, no errors
 exports.isLoggedIn = async (req, res, next) => {
+  console.log('in isloggedIn, boolean', req.cookies.jwt);
   if (req.cookies.jwt) {
     try {
       // 1) verify the token
@@ -139,6 +140,7 @@ exports.isLoggedIn = async (req, res, next) => {
       return next();
     }
   }
+  console.log('im in here as undefined');
   next();
 };
 

@@ -142,7 +142,8 @@ body {
 }
 
 #brain {
-  fill: #7bcde8;
+  /* fill: #7bcde8; */
+  fill: #fefdac;
   animation-name: brainDelay;
   transition-delay: 200ms;
   animation-duration: 3s;
@@ -246,21 +247,28 @@ input#btn1:checked {
 }
 
 .rowBoxHeader {
-  width: 60rem;
-  height: 30rem;
+  width: 45rem;
+  height: 26rem;
   font-weight: 300;
   font-size: large;
   margin: 0 auto;
   background-color: #bf5a20;
-  z-index: 9999999;
+  border-radius: 2.5rem;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(36, 0, 143, 0.55),
+    rgba(36, 0, 143, 0.85)
+  );
+  /* opacity: 0.85; */
 }
 
 .home-container {
   height: 95vh;
   background-image: linear-gradient(
       to right bottom,
-      rgba(178, 234, 248, 0.1),
-      rgba(156, 223, 238, 0.9)
+      rgba(0, 0, 0, 0.2),
+      rgba(195, 204, 219, 0.5)
     ),
     url(../img/nueronDendrites.jpeg);
   /* background-image: url(../img/nueronDendrites.jpeg); */
@@ -308,6 +316,7 @@ input#btn1:checked {
   font-weight: 300;
   background: none;
   border: none;
+
   /* display: inline-block; */
   /* vertical-align: middle; */
   /* font-family: inherit; */
@@ -319,6 +328,11 @@ input#btn1:checked {
   height: 8rem;
   position: relative;
   z-index: 100;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(36, 0, 143, 0.55),
+    rgba(36, 0, 143, 0.85)
+  );
   /* display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -511,6 +525,24 @@ input#btn1:checked {
 }
 .btn--green::after {
   background-color: #55c57a;
+}
+
+.btn--beginBlue {
+  /* background-image: linear-gradient(
+    to bottom right,
+    rgba(36, 0, 143, 0.55),
+    rgba(36, 0, 143, 0.85)
+  ); */
+  background-color: rgba(36, 0, 143, 0.85);
+  color: #fff;
+}
+.btn--beginBlue::after {
+  /* background-image: linear-gradient(
+    to bottom right,
+    rgba(36, 0, 143, 0.55),
+    rgba(36, 0, 143, 0.85)
+  ); */
+  background-color: rgba(36, 0, 143, 0.1);
 }
 
 .btn--small {
