@@ -10,4 +10,8 @@ block content
       .home-image
 
         +svg-icon.svgHead(svg-icon-name=`head`)
-        a.btn.btn--beginBlue.btn_small-footer(href=`/login`) Log in
+        if user
+          a.btn.btn--beginBlue.btn_small-footer(href=`/overview`) next
+        else
+          a.btn.btn--beginBlue.btn_small-footer(href=`/login`) Log in
+        

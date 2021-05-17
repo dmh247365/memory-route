@@ -22,6 +22,7 @@ exports.getOverview = catchAsync(async (req, res) => {
 });
 
 exports.getRoute = catchAsync(async (req, res, next) => {
+  console.log('hi im in the get route views controller');
   const route = await Route.findOne({ slug: req.params.slug });
   if (!route) {
     return next(new AppError(404, 'There is no route with that name!'));

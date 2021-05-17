@@ -51,6 +51,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 });
 
 exports.login = catchAsync(async (req, res, next) => {
+  console.log('****************** ******* im im the authController login fn');
   const { email, password } = req.body;
 
   // 1) Check if email & password exist
@@ -113,7 +114,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 
 // only for rendered pages, no errors
 exports.isLoggedIn = async (req, res, next) => {
-  console.log('in isloggedIn, boolean', req.cookies.jwt);
+  console.log('in isloggedIn: ', req.cookies.jwt);
   if (req.cookies.jwt) {
     try {
       // 1) verify the token

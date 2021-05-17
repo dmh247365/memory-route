@@ -13,7 +13,7 @@ router
 
 router
   .route('/:id')
-  .get(routeController.getRoute)
+  .get(authController.protect, routeController.getRoute)
   .patch(routeController.updateRoute)
   .delete(
     authController.protect,
