@@ -55,3 +55,4 @@ This is an instance of express, ie a server. we define our routes
 designed the login page
 designed the sign up page
 designed the call to action page
+sort out css colors
