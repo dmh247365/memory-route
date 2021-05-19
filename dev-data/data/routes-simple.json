@@ -14,26 +14,6 @@
         "_id": "5c88fa8cf4adda39709c2102",
         "prompt": "cross-platform",
         "order": 2
-      },
-      {
-        "_id": "5c88fa8cf4adda39709c2103",
-        "prompt": "interpreted",
-        "order": 3
-      },
-      {
-        "_id": "5c88fa8cf4adda39709c2104",
-        "prompt": "object-orientated",
-        "order": 4
-      },
-      {
-        "_id": "5c88fa8cf4adda39709c2105",
-        "prompt": "programming",
-        "order": 5
-      },
-      {
-        "_id": "5c88fa8cf4adda39709c2106",
-        "prompt": "language",
-        "order": 6
       }
     ],
 
@@ -59,11 +39,6 @@
         "_id": "5c88fa8cf4adda39709c2203",
         "prompt": "broken",
         "order": 3
-      },
-      {
-        "_id": "5c88fa8cf4adda39709c2204",
-        "prompt": "down",
-        "order": 4
       }
     ],
     "details": "Primitives (lowest form) cannot be broken down further, anf thus contain no other data types."
@@ -93,21 +68,6 @@
         "_id": "5c88fa8cf4adda39709c2304",
         "prompt": "Boolean",
         "order": 4
-      },
-      {
-        "_id": "5c88fa8cf4adda39709c2305",
-        "prompt": "Number",
-        "order": 5
-      },
-      {
-        "_id": "5c88fa8cf4adda39709c2306",
-        "prompt": "String",
-        "order": 6
-      },
-      {
-        "_id": "5c88fa8cf4adda39709c2307",
-        "prompt": "Symbol",
-        "order": 7
       }
     ],
     "details": "The six types of primitives are..."
@@ -132,6 +92,16 @@
         "_id": "5c88fa8cf4adda39709c2403",
         "prompt": "4round3",
         "order": 3
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2404",
+        "prompt": "4round4",
+        "order": 4
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2405",
+        "prompt": "4round5",
+        "order": 5
       }
     ],
     "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet purus gravida quis blandit turpis cursus in hac. Vel elit scelerisque mauris pellentesque. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim."
@@ -156,6 +126,21 @@
         "_id": "5c88fa8cf4adda39709c2503",
         "prompt": "5round3",
         "order": 3
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2504",
+        "prompt": "5round4",
+        "order": 4
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2505",
+        "prompt": "5round5",
+        "order": 5
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2506",
+        "prompt": "5round6",
+        "order": 6
       }
     ],
     "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet purus gravida quis blandit turpis cursus in hac. Vel elit scelerisque mauris pellentesque. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim."
@@ -180,6 +165,26 @@
         "_id": "5c88fa8cf4adda39709c2603",
         "prompt": "6round3",
         "order": 3
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2604",
+        "prompt": "6round4",
+        "order": 4
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2605",
+        "prompt": "6round5",
+        "order": 5
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2606",
+        "prompt": "6round6",
+        "order": 6
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2607",
+        "prompt": "6round7",
+        "order": 7
       }
     ],
     "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet purus gravida quis blandit turpis cursus in hac. Vel elit scelerisque mauris pellentesque. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim."
@@ -204,6 +209,31 @@
         "_id": "5c88fa8cf4adda39709c2703",
         "prompt": "7round3",
         "order": 3
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2704",
+        "prompt": "7round4",
+        "order": 4
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2705",
+        "prompt": "7round5",
+        "order": 5
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2706",
+        "prompt": "7round6",
+        "order": 6
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2707",
+        "prompt": "7round7",
+        "order": 7
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2708",
+        "prompt": "7round8",
+        "order": 8
       }
     ],
     "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet purus gravida quis blandit turpis cursus in hac. Vel elit scelerisque mauris pellentesque. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim."

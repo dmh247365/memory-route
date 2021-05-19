@@ -128,7 +128,7 @@ body {
 .medium {
   width: 100%;
   height: 100%;
-  fill: yellow;
+  /* fill: yellow; */
 }
 
 .svgHead {
@@ -217,6 +217,46 @@ body {
 #circle_3_Inner:hover {
   fill: green;
 }
+
+#circle_4_Inner {
+  fill: #accbff;
+}
+
+#circle_4_Inner:hover {
+  fill: green;
+}
+
+#circle_5_Inner {
+  fill: #accbff;
+}
+
+#circle_5_Inner:hover {
+  fill: green;
+}
+
+#circle_6_Inner {
+  fill: #accbff;
+}
+
+#circle_6_Inner:hover {
+  fill: green;
+}
+
+#circle_7_Inner {
+  fill: #accbff;
+}
+
+#circle_7_Inner:hover {
+  fill: green;
+}
+
+#circle_8_Inner {
+  fill: #accbff;
+}
+
+#circle_8_Inner:hover {
+  fill: green;
+}
 /* .medium path {
   fill: black;
 } */
@@ -226,7 +266,11 @@ body {
 }
 
 #base {
-  fill: pink;
+  fill: green;
+}
+
+#red {
+  fill: #ff0000;
 }
 
 #circle1 {
@@ -444,13 +488,13 @@ input#btn1:checked {
     linear,
     left top,
     right bottom,
-    from(rgba(125, 213, 111, 0.85)),
-    to(rgba(40, 180, 135, 0.85))
+    from(rgba(163, 217, 243, 0.82)),
+    to(rgba(143, 205, 255, 0.82))
   );
   background-image: linear-gradient(
     to bottom right,
-    rgba(125, 213, 111, 0.85),
-    rgba(40, 180, 135, 0.85)
+    rgba(163, 217, 243, 0.82),
+    rgba(143, 205, 255, 0.82)
   );
 }
 
@@ -520,11 +564,13 @@ input#btn1:checked {
 }
 
 .btn--green {
-  background-color: #55c57a;
+  /* background-color: #55c57a; */
+  background-color: #24008f;
   color: #fff;
 }
 .btn--green::after {
-  background-color: #55c57a;
+  /* background-color: #55c57a; */
+  background-color: #24008f;
 }
 
 .btn--beginBlue {
@@ -1420,10 +1466,10 @@ input#btn1:checked {
     linear,
     left top,
     right bottom,
-    from(#7dd56f),
-    to(#28b487)
+    from(#a3d9f3),
+    to(#8fcdff)
   );
-  background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
+  background-image: linear-gradient(to right bottom, #a3d9f3, #8fcdff);
   opacity: 0.7;
 }
 .card__picture-img {
