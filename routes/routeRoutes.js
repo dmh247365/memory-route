@@ -5,13 +5,11 @@ const authController = require('../controllers/authController');
 const router = express.Router();
 
 // router.param('id', routeController.checkID);
-// dave working to be deleted
-router.route('/').get(routeController.getAllRoutes);
 
-// router
-//   .route('/')
-//   .get(authController.protect, routeController.getAllRoutes)
-//   .post(routeController.createRoute);
+router
+  .route('/')
+  .get(authController.protect, routeController.getAllRoutes)
+  .post(routeController.createRoute);
 
 router
   .route('/:id')

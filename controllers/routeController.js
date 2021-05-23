@@ -3,38 +3,22 @@ const APIFeatures = require('../utils/apiFeatures');
 const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
 
-// daves test function to be deleted
-exports.getAllRoutes = (req, res, next) => {
-  const route = Route.findById(req.params.id);
-
-  // if (!route) {
-  //   return next(new AppError(404, 'No route found with that ID'));
-  // }
+exports.getAllRoutes = catchAsync(async (req, res, next) => {
+  const features = new APIFeatures(Route.find(), req.query)
+    .filter()
+    .sort()
+    .limitFields()
+    .pagination();
+  const routes = await features.query;
 
   res.status(200).json({
     status: 'success',
+    results: routes.length,
     data: {
-      route
+      routes
     }
   });
-};
-
-// exports.getAllRoutes = catchAsync(async (req, res, next) => {
-//   const features = new APIFeatures(Route.find(), req.query)
-//     .filter()
-//     .sort()
-//     .limitFields()
-//     .pagination();
-//   const routes = await features.query;
-
-//   res.status(200).json({
-//     status: 'success',
-//     results: routes.length,
-//     data: {
-//       routes
-//     }
-//   });
-// });
+});
 
 exports.getRoute = catchAsync(async (req, res, next) => {
   const route = await Route.findById(req.params.id);

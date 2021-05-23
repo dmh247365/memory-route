@@ -27,7 +27,7 @@ const routeSchema = new mongoose.Schema({
   image: {
     type: String,
     required: [true, 'A route must have an image'],
-    maxlength: [30, 'image string must be 30 charcters or less'],
+    maxlength: [30, 'image string must be 30 characters or less'],
     minlength: [8, 'image string must be 8 characters or more']
   },
   elements: [
