@@ -3,13 +3,15 @@ extends base
 block content
  main.mainWelcome
   .home-container
-    //- .home-text
+    .blockquote
+      .platoQuote We do not learn and what we call learning is only a process of recollection.
+      .platoCite Plato
       //- .memory-text memory excellence
 
-    .rowBoxHeader
-      .home-image
+    //- .rowBoxHeader
+      //- .home-image
 
-        +svg-icon.svgHead(svg-icon-name=`head`)
+        //- +svg-icon.svgHead(svg-icon-name=`head`)
         if user
           a.btn.btn--beginBlue.btn_small-footer(href=`/overview`) next
         else

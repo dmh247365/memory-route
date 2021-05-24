@@ -21,6 +21,18 @@ exports.getOverview = catchAsync(async (req, res) => {
   });
 });
 
+exports.getLearning = catchAsync(async (req, res) => {
+  // 1 - get route data from collection
+  const routes = await Route.find();
+
+  // 2 - build template
+
+  // 3 - render that template using tour data from 1)
+  res.status(200).render('learning', {
+    title: 'All Routes'
+  });
+});
+
 exports.getRoute = catchAsync(async (req, res, next) => {
   console.log('hi im in the get route views controller');
   const route = await Route.findOne({ slug: req.params.slug });

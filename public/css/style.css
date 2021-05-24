@@ -307,6 +307,31 @@ input#btn1:checked {
   /* opacity: 0.85; */
 }
 
+.blockquote {
+  position: absolute;
+  bottom: 4rem;
+  right: 5rem;
+  width: 50rem;
+  height: 13rem;
+  color: #6bbddd;
+  /* background-color: #20bf6b; */
+}
+
+.platoQuote {
+  font-size: 3rem;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.platoCite {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+}
+
 .home-container {
   height: 95vh;
   background-image: linear-gradient(
@@ -314,11 +339,12 @@ input#btn1:checked {
       rgba(0, 0, 0, 0.2),
       rgba(195, 204, 219, 0.5)
     ),
-    url(../img/nueronDendrites.jpeg);
+    url(../img/Brain_Large.jpg);
+  /* url(../img/nueronDendrites.jpeg); */
   /* background-image: url(../img/nueronDendrites.jpeg); */
   background-size: cover;
   margin: 0 auto;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -351,13 +377,13 @@ input#btn1:checked {
 }
 
 .nav--welcome {
-  /* flex: 0 1 40%; */
+  flex: 0 1 40%;
   word-spacing: 2rem;
   color: #f7f7f7;
-  font-size: 2rem;
+  font-size: 4.3rem;
   text-decoration: none;
   text-align: center;
-  font-weight: 300;
+  font-weight: bold;
   background: none;
   border: none;
 
@@ -367,16 +393,22 @@ input#btn1:checked {
 }
 
 .headerWelcome {
-  background-color: #444;
+  /* background-color: #444; */
   padding: 0 5rem;
   height: 8rem;
   position: relative;
   z-index: 100;
-  background-image: linear-gradient(
+  background-color: #444;
+  /* background-image: linear-gradient(
+    to bottom right,
+    rgba(132, 221, 107, 0.65),
+    rgba(132, 221, 107, 0.85)
+  ); */
+  /* background-image: linear-gradient(
     to bottom right,
     rgba(36, 0, 143, 0.55),
     rgba(36, 0, 143, 0.85)
-  );
+  ); */
   /* display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -488,13 +520,13 @@ input#btn1:checked {
     linear,
     left top,
     right bottom,
-    from(rgba(163, 217, 243, 0.82)),
-    to(rgba(143, 205, 255, 0.82))
+    from(rgba(125, 213, 111, 0.85)),
+    to(rgba(40, 180, 135, 0.85))
   );
   background-image: linear-gradient(
     to bottom right,
-    rgba(163, 217, 243, 0.82),
-    rgba(143, 205, 255, 0.82)
+    rgba(125, 213, 111, 0.85),
+    rgba(40, 180, 135, 0.85)
   );
 }
 
@@ -564,8 +596,8 @@ input#btn1:checked {
 }
 
 .btn--green {
-  /* background-color: #55c57a; */
-  background-color: #24008f;
+  background-color: #55c57a;
+  /* background-color: #24008f; */
   color: #fff;
 }
 .btn--green::after {
@@ -1466,10 +1498,10 @@ input#btn1:checked {
     linear,
     left top,
     right bottom,
-    from(#a3d9f3),
-    to(#8fcdff)
+    from(#7dd56f),
+    to(#28b487)
   );
-  background-image: linear-gradient(to right bottom, #a3d9f3, #8fcdff);
+  background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
   opacity: 0.7;
 }
 .card__picture-img {
