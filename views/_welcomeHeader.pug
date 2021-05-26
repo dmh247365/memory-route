@@ -1,11 +1,12 @@
 header.header
     nav.nav--welcome Memory Recall
-    .nav.nav.nav--user 
-      if user
-        .a.nav__el.nav__el--logout Log out
-        .a.nav__el(href="#")
-        //- img.nav__user-img(src='img/user.jpg' alt='User photo')
-        span= user.userName
-      else
-        a.nav__el(href='/login') Login
+    .header__logo
+      img(src='/img/memory-recall.png' alt='Memory Recall logo')
+    if user
+      .a.nav__el.nav__el--logout Log out
+      .a.nav__el(href="#")
+      //- img.nav__user-img(src='img/user.jpg' alt='User photo')
+      span= user.userName
+    else
+      a.nav__el(href='/login') Login
       //- button.nav__el.nav__el--cta Sign up

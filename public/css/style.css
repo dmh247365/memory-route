@@ -89,6 +89,10 @@ body {
   background-color: #92bbff;
   grid-column: 2 / 3;
   grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  /* align-items: column; */
+  justify-content: center;
 }
 
 .route_box-svg {
@@ -716,7 +720,8 @@ input#btn1:checked {
   }
 }
 .header__logo img {
-  height: 3.5rem;
+  /* height: 3.5rem; */
+  height: 5rem;
 }
 @media only screen and (max-width: 62.5em) {
   .header__logo {
@@ -1481,8 +1486,8 @@ input#btn1:checked {
 .area-card {
   margin: 0 2rem;
   border-radius: 3rem;
-  padding: 5rem 5rem;
-  height: 35rem;
+  padding: 3rem 3rem;
+  height: 36rem;
   width: 30rem;
   overflow: hidden;
   -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.1);
