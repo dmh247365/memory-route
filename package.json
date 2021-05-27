@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
+    "jest": "jest",
     "lint": "eslint --ext .js--ignore-path .gitignore .",
     "start": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js"

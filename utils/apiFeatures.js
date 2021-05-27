@@ -51,6 +51,10 @@ class APIFeatures {
 
     return this;
   }
+
+  myFunction(a, b) {
+    console.log('Inside myFunction');
+  }
 }
 
 module.exports = APIFeatures;

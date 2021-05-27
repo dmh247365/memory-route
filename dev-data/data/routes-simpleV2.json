@@ -1,6 +1,7 @@
 [
   {
-    "learning": "node",
+    "learning": "Javascript",
+    "route": "blarrrg1",
     "locations": [
       {
         "title": "Fishing Board",
@@ -264,6 +265,106 @@
           }
         ],
         "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet purus gravida quis blandit turpis cursus in hac. Vel elit scelerisque mauris pellentesque. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim."
+      }
+    ]
+  },
+  {
+    "learning": "Typescript",
+    "route": "blarrrg2",
+    "locations": [
+      {
+        "title": "Car showroom",
+        "number": 1,
+        "learn": "What is TypeScript?",
+        "image": "fishing_board-1.jpg",
+        "elements": [
+          {
+            "_id": "5c88fa8cf4adda39709ct101",
+            "prompt": "lightweight",
+            "order": 1
+          },
+          {
+            "_id": "5c88fa8cf4adda39709ct102",
+            "prompt": "cross-platform",
+            "order": 2
+          }
+        ],
+
+        "details": "JS is a lightweight, cross-plateform, interpreted, object-orientated computer language. \n Which is the dogs goherns!"
+      },
+      {
+        "title": "Spar shop",
+        "number": 2,
+        "learn": "What is a Union",
+        "image": "fishing_path-2.jpg",
+        "elements": [
+          {
+            "_id": "5c88fa8cf4adda39709ct201",
+            "prompt": "data type",
+            "order": 1
+          },
+          {
+            "_id": "5c88fa8cf4adda39709ct202",
+            "prompt": "cannot",
+            "order": 2
+          },
+          {
+            "_id": "5c88fa8cf4adda39709ct203",
+            "prompt": "broken",
+            "order": 3
+          }
+        ],
+        "details": "Primitives (lowest form) cannot be broken down further, anf thus contain no other data types."
+      }
+    ]
+  },
+  {
+    "learning": "Node",
+    "route": "blarrrg3",
+    "locations": [
+      {
+        "title": "Peting zoo",
+        "number": 1,
+        "learn": "What is Node?",
+        "image": "fishing_board-1.jpg",
+        "elements": [
+          {
+            "_id": "5c88fa8cf4adda39709cn101",
+            "prompt": "lightweight",
+            "order": 1
+          },
+          {
+            "_id": "5c88fa8cf4adda39709cn102",
+            "prompt": "cross-platform",
+            "order": 2
+          }
+        ],
+
+        "details": "JS is a lightweight, cross-plateform, interpreted, object-orientated computer language. \n Which is the dogs goherns!"
+      },
+      {
+        "title": "Spar shop",
+        "number": 2,
+        "learn": "What is a Union",
+        "image": "fishing_path-2.jpg",
+        "elements": [
+          {
+            "_id": "5c88fa8cf4adda39709cn201",
+            "prompt": "data type",
+            "order": 1
+          },
+          {
+            "_id": "5c88fa8cf4adda39709cn202",
+            "prompt": "cannot",
+            "order": 2
+          },
+          {
+            "_id": "5c88fa8cf4adda39709cn203",
+            "prompt": "broken",
+            "order": 3
+          }
+        ],
+        "details": "Primitives (lowest form) cannot be broken down further, anf thus contain no other data types."
       }
     ]
   }
