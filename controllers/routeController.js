@@ -22,8 +22,9 @@ exports.getAllRoutes = catchAsync(async (req, res, next) => {
 
 exports.getRoute = catchAsync(async (req, res, next) => {
   const route = await Route.findById(req.params.id);
-
+  console.log('what route is ', route);
   if (!route) {
+    console.log('im in the if error block');
     return next(new AppError(404, 'No route found with that ID'));
   }
 
@@ -37,15 +38,16 @@ exports.getRoute = catchAsync(async (req, res, next) => {
 
 exports.createRoute = catchAsync(async (req, res, next) => {
   const newRoute = await Route.create(req.body);
+  if (!newRoute) {
+    return next(new AppError(404, 'No route found with that ID'));
+  }
+
   res.status(201).json({
     status: 'success',
     data: {
       route: newRoute
     }
   });
-  if (!newRoute) {
-    return next(new AppError(404, 'No route found with that ID'));
-  }
 });
 
 exports.updateRoute = catchAsync(async (req, res, next) => {
