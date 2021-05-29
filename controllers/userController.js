@@ -24,6 +24,7 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
 
 exports.updateMe = catchAsync(async (req, res, next) => {
   // 1 - create error if user POSTs password data
+  console.log('req.body.password ', req.body.password);
   if (req.body.password || req.body.passwordConfirm) {
     return next(
       new AppError(

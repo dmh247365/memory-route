@@ -1,5 +1,5 @@
-const routeController = require('./userController');
-const Route = require('../models/routeModel');
+const userController = require('./userController');
+const User = require('../models/userModel');
 const mockRouteList = require('../test/mockData/mockRoute-simple.json');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
@@ -13,98 +13,177 @@ beforeEach(() => {
   res = httpMock.createResponse();
 });
 
-describe.only('getUser', () => {
-  it('Should be defined', () => {
-    expect(routeController.getUser).toBeDefined();
-  });
-});
+// need to validate the internal functiom filterObj
 
-describe('getRoute', () => {
+describe('getAllUsers', () => {
   it('Should be defined', () => {
-    expect(routeController.getRoute).toBeDefined();
+    expect(userController.getAllUsers).toBeDefined();
   });
 
-  it('should return route', async () => {
+  it('should return all Users', async () => {
     // arrange
-    req.params.id = mockRouteList[0].id;
-    Route.findById = jest.fn().mockReturnValue(mockRouteList[0]);
+    User.find = jest.fn().mockReturnValue([{}, {}]);
 
     // act
-    const result = await routeController.getRoute(req, res, next);
+    const result = await userController.getAllUsers(req, res, next);
 
     // assert
-    expect(Route.findById).toHaveBeenCalledWith(req.params.id);
     expect(res.statusCode).toBe(200);
     expect(res._getJSONData().status).toBe('success');
-    expect(res._getJSONData().data.route).toStrictEqual(mockRouteList[0]);
+    expect(res._getJSONData().results).toBe(2);
+    expect(res._getJSONData().data.users).toStrictEqual([{}, {}]);
+  });
+});
+
+/// need to put in updatetMe // ******************
+// *****************************
+
+describe.only('updateMe', () => {
+  it('Should be defined', () => {
+    expect(userController.updateMe).toBeDefined();
   });
 
-  it('should return 404 No route found with that ID', async () => {
+  it('should return error message (passwordConfirm present) - This route is not for password updates', async () => {
     // arrange
-    req.params.id = mockRouteList[0].id;
-    Route.findById = jest.fn();
+    // req.body.password = 'password';
+    req.body.passwordConfirm = 'passwordConfirm';
     next = jest.fn();
 
     // act
-    const result = await routeController.getRoute(req, res, next);
-    console.log('result: ', result);
+    const result = await userController.updateMe(req, res, next);
 
     // assert
     expect(next).toBeCalledTimes(1);
     console.log('next ', next);
     expect(next).toHaveBeenCalledWith(
-      new AppError(Error, 'No route found with that ID')
+      new AppError(
+        Error,
+        'This route is not for password updates. please use /updateMyPassword.'
+      )
     );
   });
-});
 
-describe('createRoute', () => {
-  it('Should be defined', () => {
-    expect(routeController.createRoute).toBeDefined();
-  });
-});
-
-describe('updateRoute', () => {
-  it('Should be defined', () => {
-    expect(routeController.updateRoute).toBeDefined();
-  });
-});
-
-describe('deleteRoute', () => {
-  it('Should be defined', () => {
-    expect(routeController.deleteRoute).toBeDefined();
-  });
-
-  it('should return route', async () => {
+  it('should return error message (password present) - This route is not for password updates', async () => {
     // arrange
-    req.params.id = mockRouteList[0].id;
-    Route.findByIdAndDelete = jest.fn().mockReturnValue(mockRouteList[0]);
+    req.body.password = 'password';
+    next = jest.fn();
 
     // act
-    const result = await routeController.deleteRoute(req, res, next);
+    const result = await userController.updateMe(req, res, next);
 
     // assert
-    expect(Route.findByIdAndDelete).toHaveBeenCalledWith(req.params.id);
-    expect(res.statusCode).toBe(204);
+    expect(next).toBeCalledTimes(1);
+    console.log('next ', next);
+    expect(next).toHaveBeenCalledWith(
+      new AppError(
+        Error,
+        'This route is not for password updates. please use /updateMyPassword.'
+      )
+    );
+  });
+
+  it('should update the user', async () => {
+    // arrange
+    req.user = {};
+    req.user.id = '5c88fa8cf4adda39709c2101';
+
+    req.body = {
+      name: 'user1',
+      email: 'email user1',
+      test: 'test1',
+      test: 'test2'
+    };
+
+    User.findByIdAndUpdate = jest.fn();
+
+    // act
+    const result = await userController.updateMe(req, res, next);
+
+    // assert
+    // expect(User.findByIdAndUpdate).toHaveBeenCalledWith(
+    //   req.params.id,
+    //   filteredBody
+    // );
+    expect(res.statusCode).toBe(200);
     expect(res._getJSONData().status).toBe('success');
-    expect(res._getJSONData().data).toBe(null);
+    // expect(res._getJSONData().data.user).toStrictEqual(mockRouteList[0]);
+  });
+});
+
+/// need to put in updatedUser // ******************
+// *****************************
+
+describe('getUser', () => {
+  it('Should be defined', () => {
+    expect(userController.getUser).toBeDefined();
   });
 
-  it('should return 404 No route found with that ID', async () => {
+  it('should return route not defined message', async () => {
     // arrange
-    req.params.id = mockRouteList[0].id;
-    Route.findByIdAndDelete = jest.fn();
-    next = jest.fn();
 
     // act
-    const result = await routeController.deleteRoute(req, res, next);
-    console.log('result: ', result);
+    const result = await userController.getUser(req, res);
 
     // assert
-    expect(next).toBeCalledTimes(1);
-    console.log('next ', next);
-    expect(next).toHaveBeenCalledWith(
-      new AppError(Error, 'No route found with that ID')
-    );
+    expect(res.statusCode).toBe(500);
+    expect(res._getJSONData().status).toBe('error');
+    expect(res._getJSONData().message).toBe('This route is not yet defined!');
+  });
+});
+
+describe('createUser', () => {
+  it('Should be defined', () => {
+    expect(userController.createUser).toBeDefined();
+  });
+
+  it('should return route not defined message', async () => {
+    // arrange
+
+    // act
+    const result = await userController.createUser(req, res);
+
+    // assert
+    expect(res.statusCode).toBe(500);
+    expect(res._getJSONData().status).toBe('error');
+    expect(res._getJSONData().message).toBe('This route is not yet defined!');
+  });
+});
+
+/// need to put in deletMe // ******************
+// *****************************
+
+describe('updateUser', () => {
+  it('Should be defined', () => {
+    expect(userController.updateUser).toBeDefined();
+  });
+
+  it('should return route not defined message', async () => {
+    // arrange
+
+    // act
+    const result = await userController.updateUser(req, res);
+
+    // assert
+    expect(res.statusCode).toBe(500);
+    expect(res._getJSONData().status).toBe('error');
+    expect(res._getJSONData().message).toBe('This route is not yet defined!');
+  });
+});
+
+describe('deleteUser', () => {
+  it('Should be defined', () => {
+    expect(userController.deleteUser).toBeDefined();
+  });
+
+  it('should return route not defined message', async () => {
+    // arrange
+
+    // act
+    const result = await userController.deleteUser(req, res);
+
+    // assert
+    expect(res.statusCode).toBe(500);
+    expect(res._getJSONData().status).toBe('error');
+    expect(res._getJSONData().message).toBe('This route is not yet defined!');
   });
 });
