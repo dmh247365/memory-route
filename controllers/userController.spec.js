@@ -13,6 +13,11 @@ beforeEach(() => {
   res = httpMock.createResponse();
 });
 
+// afterEach(() => {
+//   User.find.mockClear();
+//   User.findByIdAndUpdate();
+// });
+
 // need to validate the internal functiom filterObj
 
 describe('getAllUsers', () => {
@@ -28,17 +33,31 @@ describe('getAllUsers', () => {
     const result = await userController.getAllUsers(req, res, next);
 
     // assert
-    expect(res.statusCode).toBe(200);
+    expect(res.statusCode).toEqual(200);
     expect(res._getJSONData().status).toBe('success');
     expect(res._getJSONData().results).toBe(2);
     expect(res._getJSONData().data.users).toStrictEqual([{}, {}]);
+  });
+
+  it.only('should return a blank array when no users found', async () => {
+    // arrange
+    User.find = jest.fn().mockReturnValue([]);
+
+    // act
+    const result = await userController.getAllUsers(req, res, next);
+
+    // assert
+    expect(res.statusCode).toEqual(200);
+    expect(res._getJSONData().status).toBe('success');
+    expect(res._getJSONData().results).toBe(0);
+    expect(res._getJSONData().data.users).toStrictEqual([]);
   });
 });
 
 /// need to put in updatetMe // ******************
 // *****************************
 
-describe.only('updateMe', () => {
+describe('updateMe', () => {
   it('Should be defined', () => {
     expect(userController.updateMe).toBeDefined();
   });
@@ -94,6 +113,11 @@ describe.only('updateMe', () => {
       test: 'test2'
     };
 
+    const filteredBody = {
+      test: 'test1',
+      test: 'test2'
+    };
+
     User.findByIdAndUpdate = jest.fn();
 
     // act
@@ -104,7 +128,7 @@ describe.only('updateMe', () => {
     //   req.params.id,
     //   filteredBody
     // );
-    expect(res.statusCode).toBe(200);
+    expect(res.statusCode).toEqual(200);
     expect(res._getJSONData().status).toBe('success');
     // expect(res._getJSONData().data.user).toStrictEqual(mockRouteList[0]);
   });
@@ -125,7 +149,7 @@ describe('getUser', () => {
     const result = await userController.getUser(req, res);
 
     // assert
-    expect(res.statusCode).toBe(500);
+    expect(res.statusCode).toEqual(500);
     expect(res._getJSONData().status).toBe('error');
     expect(res._getJSONData().message).toBe('This route is not yet defined!');
   });
@@ -143,7 +167,7 @@ describe('createUser', () => {
     const result = await userController.createUser(req, res);
 
     // assert
-    expect(res.statusCode).toBe(500);
+    expect(res.statusCode).toEqual(500);
     expect(res._getJSONData().status).toBe('error');
     expect(res._getJSONData().message).toBe('This route is not yet defined!');
   });
@@ -164,7 +188,7 @@ describe('updateUser', () => {
     const result = await userController.updateUser(req, res);
 
     // assert
-    expect(res.statusCode).toBe(500);
+    expect(res.statusCode).toEqual(500);
     expect(res._getJSONData().status).toBe('error');
     expect(res._getJSONData().message).toBe('This route is not yet defined!');
   });
@@ -182,7 +206,7 @@ describe('deleteUser', () => {
     const result = await userController.deleteUser(req, res);
 
     // assert
-    expect(res.statusCode).toBe(500);
+    expect(res.statusCode).toEqual(500);
     expect(res._getJSONData().status).toBe('error');
     expect(res._getJSONData().message).toBe('This route is not yet defined!');
   });
