@@ -46,23 +46,13 @@ This holds a script file, which can be used to seed populate the database with c
 
 This file contains all the methods / properties that we want a generated instance of the express server to have.
 
-### public (folder)
-
-xx
-
 ### server.js (file)
 
 This is an instance of express, ie a server. we define our routes
 
-### Router (folder)
-
-## CONTROLLERS (folder)
-
-## MODELS (folder)
-
-## VIEWS (folder)
-
 ## css --> sass need to installer compiler etc
+
+decide of styling, probably look to use react with styled components
 
 ## do designs per figma file & add in styling
 
