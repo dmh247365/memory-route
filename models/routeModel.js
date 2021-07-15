@@ -1,4 +1,3 @@
-const { NetworkAuthenticationRequire } = require('http-errors');
 const mongoose = require('mongoose');
 const slugify = require('slugify');
 
@@ -39,7 +38,7 @@ const routeSchema = new mongoose.Schema({
   details: {
     type: String,
     required: [true, 'A route must have details'],
-    maxlength: [500, 'image string must be 500 characters or less'],
+    maxlength: [1000, 'image string must be 1000 characters or less'],
     minlength: [8, 'image string must be 8 charcters or more']
   }
 });

@@ -14,252 +14,315 @@
         "_id": "5c88fa8cf4adda39709c2102",
         "prompt": "cross-platform",
         "order": 2
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2103",
+        "prompt": "interpreted",
+        "order": 3
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2104",
+        "prompt": "objected-oriented",
+        "order": 4
       }
     ],
-
-    "details": "JS is a lightweight, cross-plateform, interpreted, object-orientated computer language. \n Which is the dogs goherns!"
+    "details": "JS is a lightweight, cross-plateform, interpreted, object-oriented computer language. \n lightweight = doesn't use much memory. \n cross-platform = can run on OS, Windows, linux etc \n interpreted =  ie its not compiled before its ran, instead an 'interpreter', interprets each line at run-time. \n its object-oriented = its a language based on objects."
   },
   {
     "title": "Fishing Path",
     "number": 2,
-    "learn": "What is a Primitives",
+    "learn": "What is OOP?",
     "image": "fishing_path-2.jpg",
     "elements": [
       {
         "_id": "5c88fa8cf4adda39709c2201",
-        "prompt": "data type",
+        "prompt": "Reflect",
         "order": 1
       },
       {
         "_id": "5c88fa8cf4adda39709c2202",
-        "prompt": "cannot",
+        "prompt": "Real world",
         "order": 2
       },
       {
         "_id": "5c88fa8cf4adda39709c2203",
-        "prompt": "broken",
+        "prompt": "State",
         "order": 3
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2204",
+        "prompt": "Behaviour",
+        "order": 4
       }
     ],
-    "details": "Primitives (lowest form) cannot be broken down further, anf thus contain no other data types."
+    "details": "Around us we have many real world object (tangibles), dog, desk, car etc. Real world objects share two characterists they all have state and they all have behaviour. \n Software objects are modeled on real world objects in that they have state and behaviour. \n A software object maintains its state in variables and implements it behaviour with methods."
   },
   {
     "title": "Nursery Gate",
     "number": 3,
-    "learn": "How many Primitives",
+    "learn": "4 pillars of OOP",
     "image": "nursery_gate-3.jpg",
     "elements": [
       {
         "_id": "5c88fa8cf4adda39709c2301",
-        "prompt": "6 Bunnss",
+        "prompt": "A pie",
         "order": 1
       },
       {
         "_id": "5c88fa8cf4adda39709c2302",
-        "prompt": "Undefined",
+        "prompt": "Abstraction",
         "order": 2
       },
       {
         "_id": "5c88fa8cf4adda39709c2303",
-        "prompt": "Null",
+        "prompt": "Polymorphism",
         "order": 3
       },
       {
         "_id": "5c88fa8cf4adda39709c2304",
-        "prompt": "Boolean",
+        "prompt": "Inheritance",
         "order": 4
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2304",
+        "prompt": "Encapsulation",
+        "order": 5
       }
     ],
-    "details": "The six types of primitives are..."
+    "details": "the four pillars of OOP (Object-Oriented Programming) are:- \n 1. Abstraction - complexity is hidden. \n 2. Polymorphism (many--forms) - one function/method can have many forms, ie be changed because they are intepreted at run-time. \n 3. Inheritance (classes -> subclasses) - objects are reusable thus we can elimate redundant code.\n 4. Encapsulation (enclose something) - idea of data & associated functionality enclosed together."
   },
   {
     "title": "Garden Shed",
     "number": 4,
-    "learn": "Fat models thin controllers",
+    "learn": "What is the Execution Context?",
     "image": "garden_shed-4.jpg",
     "elements": [
       {
         "_id": "5c88fa8cf4adda39709c2401",
-        "prompt": "4round1",
+        "prompt": "Wrapper",
         "order": 1
       },
       {
         "_id": "5c88fa8cf4adda39709c2402",
-        "prompt": "4round2",
+        "prompt": "around",
         "order": 2
       },
       {
         "_id": "5c88fa8cf4adda39709c2403",
-        "prompt": "4round3",
+        "prompt": "running",
         "order": 3
       },
       {
         "_id": "5c88fa8cf4adda39709c2404",
-        "prompt": "4round4",
+        "prompt": "code",
         "order": 4
-      },
-      {
-        "_id": "5c88fa8cf4adda39709c2405",
-        "prompt": "4round5",
-        "order": 5
       }
     ],
-    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet purus gravida quis blandit turpis cursus in hac. Vel elit scelerisque mauris pellentesque. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim."
+    "details": "The EC (Execution Context) is a wrapper that is put around the code that is running. \n It ensures that JS runs synchronously. When we run JS the Global EC is created & placed on the callstack, then every called function creates its own execution context which is added to the callstack (LIFO). \n JS keeps a track of where we are via the callstack, when a function returns (ie its completed its task) its popped off the callstack."
   },
   {
     "title": "Electric Gate",
     "number": 5,
-    "learn": "Fat models thin controllers",
+    "learn": "What are the two EC Phases?",
     "image": "electric_gate-5.jpg",
     "elements": [
       {
-        "_id": "5c88fa8cf4adda39709c2501",
-        "prompt": "5round1",
-        "order": 1
-      },
-      {
-        "_id": "5c88fa8cf4adda39709c2502",
-        "prompt": "5round2",
-        "order": 2
-      },
-      {
-        "_id": "5c88fa8cf4adda39709c2503",
-        "prompt": "5round3",
-        "order": 3
-      },
-      {
-        "_id": "5c88fa8cf4adda39709c2504",
-        "prompt": "5round4",
-        "order": 4
-      },
-      {
-        "_id": "5c88fa8cf4adda39709c2505",
-        "prompt": "5round5",
-        "order": 5
-      },
-      {
-        "_id": "5c88fa8cf4adda39709c2506",
-        "prompt": "5round6",
-        "order": 6
-      }
-    ],
-    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet purus gravida quis blandit turpis cursus in hac. Vel elit scelerisque mauris pellentesque. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim."
-  },
-  {
-    "title": "Johns Path",
-    "number": 6,
-    "learn": "Fat models thin controllers",
-    "image": "johns_path-6.jpg",
-    "elements": [
-      {
         "_id": "5c88fa8cf4adda39709c2601",
-        "prompt": "6round1",
+        "prompt": "Creation & Execution",
         "order": 1
       },
       {
         "_id": "5c88fa8cf4adda39709c2602",
-        "prompt": "6round2",
+        "prompt": "Memory space",
         "order": 2
       },
       {
         "_id": "5c88fa8cf4adda39709c2603",
-        "prompt": "6round3",
+        "prompt": "variables",
         "order": 3
       },
       {
         "_id": "5c88fa8cf4adda39709c2604",
-        "prompt": "6round4",
+        "prompt": "functions",
         "order": 4
       },
       {
         "_id": "5c88fa8cf4adda39709c2605",
-        "prompt": "6round5",
+        "prompt": "hoisting",
         "order": 5
       },
       {
         "_id": "5c88fa8cf4adda39709c2606",
-        "prompt": "6round6",
+        "prompt": "this",
         "order": 6
       },
       {
         "_id": "5c88fa8cf4adda39709c2607",
-        "prompt": "6round7",
+        "prompt": "Runs code",
         "order": 7
       }
     ],
-    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet purus gravida quis blandit turpis cursus in hac. Vel elit scelerisque mauris pellentesque. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim."
+    "details": "The EC phases are Creation and Execution. \n 1. Creation phase :- \n i - sets up the memory space for variables & functions. And Hoisting occurs. \n ii - identifies the global object & \"this\" & outer environment. \n 2. Execution phase - runs the code line by line (top to bottom), all variables are now defined."
+  },
+  {
+    "title": "Johns Path",
+    "number": 6,
+    "learn": "What is Hoisting?",
+    "image": "johns_path-6.jpg",
+    "elements": [
+      {
+        "_id": "5c88fa8cf4adda39709c2601",
+        "prompt": "Act",
+        "order": 1
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2602",
+        "prompt": "Putting",
+        "order": 2
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2603",
+        "prompt": "Variables",
+        "order": 3
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2604",
+        "prompt": "(name)",
+        "order": 4
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2605",
+        "prompt": "Functions",
+        "order": 5
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2606",
+        "prompt": "(whole)",
+        "order": 6
+      }
+    ],
+    "details": "Hoisting is the act of putting variables (name only) and functions (whole) into memory in the creation phase of the EC."
   },
   {
     "title": "Fresh eggs",
     "number": 7,
-    "learn": "Fat models thin controllers",
+    "learn": "Hoisting: Var Let Const",
     "image": "fresh_eggs-7.jpg",
     "elements": [
       {
         "_id": "5c88fa8cf4adda39709c2701",
-        "prompt": "7round1",
+        "prompt": "VuLCan",
         "order": 1
       },
       {
         "_id": "5c88fa8cf4adda39709c2702",
-        "prompt": "7round2",
+        "prompt": "Var",
         "order": 2
       },
       {
         "_id": "5c88fa8cf4adda39709c2703",
-        "prompt": "7round3",
+        "prompt": "Treated",
         "order": 3
       },
       {
         "_id": "5c88fa8cf4adda39709c2704",
-        "prompt": "7round4",
+        "prompt": "Undefined",
         "order": 4
       },
       {
         "_id": "5c88fa8cf4adda39709c2705",
-        "prompt": "7round5",
+        "prompt": "Const",
         "order": 5
       },
       {
         "_id": "5c88fa8cf4adda39709c2706",
-        "prompt": "7round6",
+        "prompt": "Let",
         "order": 6
       },
       {
         "_id": "5c88fa8cf4adda39709c2707",
-        "prompt": "7round7",
+        "prompt": "TDZ",
         "order": 7
       },
       {
         "_id": "5c88fa8cf4adda39709c2708",
-        "prompt": "7round8",
+        "prompt": "Unitialized",
         "order": 8
       }
     ],
-    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet purus gravida quis blandit turpis cursus in hac. Vel elit scelerisque mauris pellentesque. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim."
+    "details": "When hoisted variables are treated differently. \n Var is set to undefined. \n Let & Const enter a temporal dead zone and are classed as 'uninitialised'."
   },
   {
     "title": "Raby Signpost",
     "number": 8,
-    "learn": "Fat models thin controllers",
+    "learn": "What is SOLID?",
     "image": "raby_signpost-8.jpg",
     "elements": [
       {
         "_id": "5c88fa8cf4adda39709c2801",
-        "prompt": "8round1",
+        "prompt": "Five",
         "order": 1
       },
       {
         "_id": "5c88fa8cf4adda39709c2802",
-        "prompt": "8round2",
+        "prompt": "Principles",
         "order": 2
       },
       {
         "_id": "5c88fa8cf4adda39709c2803",
-        "prompt": "8round3",
+        "prompt": "To Make",
         "order": 3
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2804",
+        "prompt": "Software",
+        "order": 4
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2805",
+        "prompt": "Designs",
+        "order": 5
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2806",
+        "prompt": "M.U.F.",
+        "order": 6
       }
     ],
-    "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet purus gravida quis blandit turpis cursus in hac. Vel elit scelerisque mauris pellentesque. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim."
+    "details": "SOLID is an acronym for five design principles intended to make software designs more maintainable, understandable and flexible."
+  },
+  {
+    "title": "Windmill",
+    "number": 9,
+    "learn": "SOLID Principles",
+    "image": "old_windmill-9.jpg",
+    "elements": [
+      {
+        "_id": "5c88fa8cf4adda39709c2901",
+        "prompt": "Single Responsibility",
+        "order": 1
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2902",
+        "prompt": "Open Closed",
+        "order": 2
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2903",
+        "prompt": "Liskov Substitution",
+        "order": 3
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2904",
+        "prompt": "Interface Segregation",
+        "order": 4
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c2905",
+        "prompt": "Dependency Inversion",
+        "order": 5
+      }
+    ],
+    "details": "SOLID is an acronym for five design principles intended to make software designs more maintainable, understandable and flexible. \n SPP - Single Responsibility Principle -> Basically everything should have only one reason to change. \n OCP - Open Closed Principle -> Open for extension but closed for modification. \n LSP -> Liskov Substitution Principle -> A derived subtype maybe used to replace the class/object it was derived from. \n ISP - Interface Segregation Principle -> Clients should not be forced to implement interfaces they don't use. \n DIP - Dependency Inversion Principle -> We don't want high level code dependent upon low level code (ie say for a payment process we interact with that, behind the scenes that interacts with say Stripe & Paypal interface."
   }
 ]

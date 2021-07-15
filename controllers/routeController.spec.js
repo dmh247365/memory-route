@@ -1,13 +1,15 @@
+const httpMock = require('node-mocks-http');
 const routeController = require('./routeController');
 const Route = require('../models/routeModel');
-const mockRouteList = require('../test/mockData/mockRoute-simple.json');
+const mockRouteList = require('../dev-data/data/routes-simple.json');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const APIFeatures = require('../utils/apiFeatures');
 // const request = require('supertest');
-const httpMock = require('node-mocks-http');
 
-let next, req, res;
+let next;
+let req;
+let res;
 
 beforeEach(() => {
   next = null;
@@ -77,7 +79,7 @@ describe('deleteRoute', () => {
     expect(routeController.deleteRoute).toBeDefined();
   });
 
-  it('should return route', async () => {
+  it.only('should return route', async () => {
     // arrange
     req.params.id = mockRouteList[0].id;
     Route.findByIdAndDelete = jest.fn().mockReturnValue(mockRouteList[0]);
@@ -86,6 +88,7 @@ describe('deleteRoute', () => {
     const result = await routeController.deleteRoute(req, res, next);
 
     // assert
+    console.log(result);
     expect(Route.findByIdAndDelete).toHaveBeenCalledWith(req.params.id);
     expect(res.statusCode).toBe(204);
     expect(res._getJSONData().status).toBe('success');

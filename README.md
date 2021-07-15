@@ -1,4 +1,18 @@
 <!-- prettier-ignore -->
+## to start in a new terminal window do
+
+$npm start
+
+## to test
+
+$ npm run test userController.spec.js
+
+### git commands
+
+$git add -A
+$git commit -m "blah blah"
+$git push origin master
+
 ### Default database information
 
 1. - clear the database (in cmd line do)

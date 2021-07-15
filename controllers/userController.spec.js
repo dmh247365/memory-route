@@ -1,11 +1,11 @@
+const httpMock = require('node-mocks-http');
 const userController = require('./userController');
 const User = require('../models/userModel');
-const mockRouteList = require('../test/mockData/mockRoute-simple.json');
-const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
-const httpMock = require('node-mocks-http');
 
-let next, req, res;
+let next;
+let req;
+let res;
 
 beforeEach(() => {
   next = null;
@@ -13,24 +13,20 @@ beforeEach(() => {
   res = httpMock.createResponse();
 });
 
-// afterEach(() => {
-//   User.find.mockClear();
-//   User.findByIdAndUpdate();
-// });
-
-// need to validate the internal functiom filterObj
-
-describe('getAllUsers', () => {
+describe.only('getAllUsers', () => {
   it('Should be defined', () => {
     expect(userController.getAllUsers).toBeDefined();
   });
 
   it('should return all Users', async () => {
     // arrange
-    User.find = jest.fn().mockReturnValue([{}, {}]);
+    // User.find = jest.fn().mockReturnValue([{}, {}]);
+    jest.spyOn(User, 'find');
+    User.find.mockImplementation(() => [{}, {}]);
 
     // act
     const result = await userController.getAllUsers(req, res, next);
+    console.log('result', result);
 
     // assert
     expect(res.statusCode).toEqual(200);
@@ -39,7 +35,7 @@ describe('getAllUsers', () => {
     expect(res._getJSONData().data.users).toStrictEqual([{}, {}]);
   });
 
-  it.only('should return a blank array when no users found', async () => {
+  it('should return a blank array when no users found', async () => {
     // arrange
     User.find = jest.fn().mockReturnValue([]);
 
@@ -54,9 +50,6 @@ describe('getAllUsers', () => {
   });
 });
 
-/// need to put in updatetMe // ******************
-// *****************************
-
 describe('updateMe', () => {
   it('Should be defined', () => {
     expect(userController.updateMe).toBeDefined();
@@ -64,7 +57,6 @@ describe('updateMe', () => {
 
   it('should return error message (passwordConfirm present) - This route is not for password updates', async () => {
     // arrange
-    // req.body.password = 'password';
     req.body.passwordConfirm = 'passwordConfirm';
     next = jest.fn();
 
@@ -92,7 +84,6 @@ describe('updateMe', () => {
 
     // assert
     expect(next).toBeCalledTimes(1);
-    console.log('next ', next);
     expect(next).toHaveBeenCalledWith(
       new AppError(
         Error,
@@ -101,33 +92,40 @@ describe('updateMe', () => {
     );
   });
 
-  it('should update the user', async () => {
+  it('should updateMe', async () => {
     // arrange
+    const safeUser = {
+      testprop1: 'testprop1',
+      testprop2: 'testprop2',
+      testprop3: 'testprop3'
+    };
+
+    const user = {
+      ...safeUser,
+      name: 'blarrg',
+      email: 'blarrge'
+    };
+
     req.user = {};
     req.user.id = '5c88fa8cf4adda39709c2101';
 
     req.body = {
       name: 'user1',
       email: 'email user1',
-      test: 'test1',
-      test: 'test2'
+      test1: 'test1',
+      test2: 'test2'
     };
-
-    const filteredBody = {
-      test: 'test1',
-      test: 'test2'
-    };
-
-    User.findByIdAndUpdate = jest.fn();
 
     // act
     const result = await userController.updateMe(req, res, next);
+    // jest.spyOn()
 
     // assert
     // expect(User.findByIdAndUpdate).toHaveBeenCalledWith(
     //   req.params.id,
     //   filteredBody
     // );
+
     expect(res.statusCode).toEqual(200);
     expect(res._getJSONData().status).toBe('success');
     // expect(res._getJSONData().data.user).toStrictEqual(mockRouteList[0]);
@@ -173,8 +171,11 @@ describe('createUser', () => {
   });
 });
 
-/// need to put in deletMe // ******************
-// *****************************
+describe('deleteMe', () => {
+  it.todo('Should be defined');
+  it.todo('Should return success');
+  it.todo('clarify what happens when user cannot be found');
+});
 
 describe('updateUser', () => {
   it('Should be defined', () => {
