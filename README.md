@@ -1,4 +1,15 @@
 <!-- prettier-ignore -->
+# NOTE:-
+
+This was purely a proof of concept on an idea I had, this have given me the information required to now build a much more robush app. So currently building a completely new version which will have:
+
+1 - FE --> React
+2 - BE --> TypeScript / Mongoose / Mongo / Jest
+
+This existing project will no longer be used / updated.
+
+---
+
 ## to start in a new terminal window do
 
 $npm start

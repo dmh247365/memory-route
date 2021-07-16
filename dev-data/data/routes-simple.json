@@ -324,5 +324,39 @@
       }
     ],
     "details": "SOLID is an acronym for five design principles intended to make software designs more maintainable, understandable and flexible. \n SPP - Single Responsibility Principle -> Basically everything should have only one reason to change. \n OCP - Open Closed Principle -> Open for extension but closed for modification. \n LSP -> Liskov Substitution Principle -> A derived subtype maybe used to replace the class/object it was derived from. \n ISP - Interface Segregation Principle -> Clients should not be forced to implement interfaces they don't use. \n DIP - Dependency Inversion Principle -> We don't want high level code dependent upon low level code (ie say for a payment process we interact with that, behind the scenes that interacts with say Stripe & Paypal interface."
+  },
+  {
+    "title": "Sheep field gate",
+    "number": 10,
+    "learn": "What is a closure?",
+    "image": "sheep_field_entrance-10.jpg",
+    "elements": [
+      {
+        "_id": "5c88fa8cf4adda39709c3001",
+        "prompt": "Function",
+        "order": 1
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c3002",
+        "prompt": "Access",
+        "order": 2
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c3003",
+        "prompt": "Variables",
+        "order": 3
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c3004",
+        "prompt": "Outside",
+        "order": 4
+      },
+      {
+        "_id": "5c88fa8cf4adda39709c3005",
+        "prompt": "Itself",
+        "order": 5
+      }
+    ],
+    "details": "A closure is a function (fun-shon) that accesses (yozzer hughes) variables (furry balls) defined outside (sid sittiing outside) of itself"
   }
 ]
